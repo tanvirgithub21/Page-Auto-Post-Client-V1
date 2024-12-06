@@ -6,7 +6,7 @@ import { Menus } from "./utils";
 export default function Navbar() {
   return (
     <div>
-      <header className="h-16 text-[15px] fixed inset-0 flex-center dark:bg-[#0E1628] border-b border-[#2b4175] ">
+      <header className="h-16 text-[15px] relative inset-0 flex-center dark:bg-[#0E1628] border-b border-[#2b4175] ">
         <nav className=" px-3.5 flex-center-between w-full max-w-7xl mx-auto">
           <div className="flex-center gap-x-3 z-[999] relative">
             <h3 className="text-lg font-semibold">Framer</h3>
