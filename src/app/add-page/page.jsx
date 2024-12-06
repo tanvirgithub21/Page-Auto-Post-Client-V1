@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const PageForm = () => {
+const AddPage = () => {
   const [isReferencePage, setIsReferencePage] = useState(false);
   const [formData, setFormData] = useState({
     pageName: "",
@@ -10,6 +10,7 @@ const PageForm = () => {
     shortLivedToken: "",
     appId: "",
     appSecret: "",
+    email: "",
     referencePage: "",
   });
 
@@ -34,7 +35,7 @@ const PageForm = () => {
     <div className={`min-h-screen p-6 `}>
       <div className="container mx-auto md:max-w-lg ">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex text-center mb-8">
           <h1 className="text-2xl font-bold">Add New Page</h1>
         </div>
 
@@ -127,6 +128,21 @@ const PageForm = () => {
                   exit={{ opacity: 0, y: -50 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
+                  {/* Email */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full p-3 rounded border dark:border-gray-700 bg-gray-100 dark:bg-gray-900 text-black dark:text-white"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+
                   {/* Short Lived Token */}
                   <div className="mb-4">
                     <label className="block text-sm font-medium mb-2">
@@ -191,4 +207,4 @@ const PageForm = () => {
   );
 };
 
-export default PageForm;
+export default AddPage;
